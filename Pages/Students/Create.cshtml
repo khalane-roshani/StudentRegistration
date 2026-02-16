@@ -1,0 +1,53 @@
+﻿@page
+@model StudentRegistration.Pages.Students.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+<h3>@ViewData["Title"]</h3>
+<hr />
+<div class="row shadow" >
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Students.Name" class="control-label"></label>
+                <input asp-for="Students.Name" class="form-control"/>
+                <span asp-validation-for="Students.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Students.Email" class="control-label"></label>
+                <input asp-for="Students.Email" class="form-control" />
+                <span asp-validation-for="Students.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Students.Contact" class="control-label"></label>
+                <input asp-for="Students.Contact" class="form-control" />
+                <span asp-validation-for="Students.Contact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Students.Course" class="control-label"></label>
+                <input asp-for="Students.Course" class="form-control" />
+                <span asp-validation-for="Students.Course" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Students.Age" class="control-label"></label>
+                <input asp-for="Students.Age" class="form-control" />
+                <span asp-validation-for="Students.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Students.Gender" class="control-label"></label>
+                <input asp-for="Students.Gender" class="form-control" />
+                <span type="Students.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2" >
+                <input type="submit" value="Create" class="btn btn-primary"/>
+                <a class="btn btn-success" asp-page="Index">Students List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+@{
+        await (Html.RenderPartialAsync("_ValidationScriptsPartial"));
+    }
+}
